@@ -35,7 +35,7 @@ function addProject(group, itemLink, itemName, itemDescription, itemDate) {
 function addProjectFromObject(project, topOverride) {
 	let friendlyName = project["friendlyName"];
 	let idName = project["idName"];
-	let description = project["description"];
+	let description = project["content"];
 	let isBlog = project["blog"];
 	let isActive = project["active"];
 	let date = project["date"];
