@@ -5,14 +5,18 @@ window.onload = () => {
 	const queryString = window.location.search;
 	const urlParams = new URLSearchParams(queryString);
 
-	if (!urlParams.has('post')) {
-		let t_html = `<div><div class="container-xl px-3 px-md-6 mt-6 pt-3"><header class="d-lg-flex gutter-lg mb-6"><div class="col-12 mb-3 mb-lg-0"><h1 id="title-h1">MeeplabsDev<!-- --></h1><div class="f2 colour-text-subtle mb-3"><p>I'm Ethan, I do full-stack software and web development.</p></div></div></header></div><div><div class="container-xl px-3 px-md-6 mt-6"><div class="d-lg-flex gutter my-6 py-6"><div class="col-12 mb-4 mb-lg-0 col-lg-4"><div class="mb-4 d-flex flex-items-baseline"><h2 id="topProjectsTitle" class="f4 text-semibold">Top Projects</h2></div><ul id="topProjects" class="article-column"></ul></div><div class="col-12 mb-4 mb-lg-0 col-lg-4"><div class="mb-4 d-flex flex-items-baseline"><h2 id="currentProjectsTitle" class="f4 text-semibold">Current Projects</h2></div><ul id="currentProjects" class="article-column"></ul></div><div class="col-12 mb-4 mb-lg-0 col-lg-4"><div class="mb-4 d-flex flex-items-baseline"><h2 id="allProjectsTitle" class="f4 text-semibold">All Projects</h2><a rel="noopener" class="ml-4" href="allProjects">View all<!-- --><svg focusable="false" role="img" class="v-align-middle" viewboxed="0 0 16 16" width="14" height="14" fill="currentColor" style="display:inline-block;user-select:none;vertical-align:text-bottom;overflow:visible"><path d="M8.22 2.97a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042l2.97-2.97H3.75a.75.75 0 0 1 0-1.5h7.44L8.22 4.03a.75.75 0 0 1 0-1.06Z" /></svg></a></div><ul id="allProjects" class="article-column"></ul></div></div></div><div class="color-bg-subtle py-6"><div class="container-xl px-3 px-md-6 mt-6 my-6"><div><div class="d-lg-flex flex-items-stretch"><ul id="blogPosts" class="d-flex flex-wrap gutter width-full"></ul></div></div></div></div></div></div>`
+	if (!urlParams.has('post') && !urlParams.has('allProjects')) {
+		let t_html = `<div><div class="container-xl px-3 px-md-6 mt-6 pt-3"><header class="d-lg-flex gutter-lg mb-6"><div class="col-12 mb-3 mb-lg-0"><h1 id="title-h1">MeeplabsDev<!-- --></h1><div class="f2 colour-text-subtle mb-3"><p>I'm Ethan, I do full-stack software and web development.</p></div></div></header></div><div><div class="container-xl px-3 px-md-6 mt-6"><div class="d-lg-flex gutter my-6 py-6"><div class="col-12 mb-4 mb-lg-0 col-lg-4"><div class="mb-4 d-flex flex-items-baseline"><h2 id="topProjectsTitle" class="f4 text-semibold">Top Projects</h2></div><ul id="topProjects" class="article-column"></ul></div><div class="col-12 mb-4 mb-lg-0 col-lg-4"><div class="mb-4 d-flex flex-items-baseline"><h2 id="currentProjectsTitle" class="f4 text-semibold">Current Projects</h2></div><ul id="currentProjects" class="article-column"></ul></div><div class="col-12 mb-4 mb-lg-0 col-lg-4"><div class="mb-4 d-flex flex-items-baseline"><h2 id="allProjectsTitle" class="f4 text-semibold">All Projects</h2><a rel="noopener" class="ml-4" href="/?allProjects">View all<!-- --><svg focusable="false" role="img" class="v-align-middle" viewboxed="0 0 16 16" width="14" height="14" fill="currentColor" style="display:inline-block;user-select:none;vertical-align:text-bottom;overflow:visible"><path d="M8.22 2.97a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042l2.97-2.97H3.75a.75.75 0 0 1 0-1.5h7.44L8.22 4.03a.75.75 0 0 1 0-1.06Z" /></svg></a></div><ul id="allProjects" class="article-column"></ul></div></div></div><div class="color-bg-subtle py-6"><div class="container-xl px-3 px-md-6 mt-6 my-6"><div><div class="d-lg-flex flex-items-stretch"><ul id="blogPosts" class="d-flex flex-wrap gutter width-full"></ul></div></div></div></div></div></div>`
 		document.getElementById('main-content').innerHTML = t_html;
 
 		updateNums();
 		updateCards();
 	} else {
-		loadPost(urlParams.get('post'));
+		if (urlParams.has('allProjects')) {
+			loadAllProjects();
+		} else {
+			loadPost(urlParams.get('post'));
+		}
 	}
 }
 
@@ -134,6 +138,26 @@ function updateCards() {
 				addpostFromObject(selectedpost, true);
 			})
 		}
+	})
+}
+
+function loadAllProjects() {
+	let t_html = '<div><div class="container-xl px-3 px-md-6 mt-6 pt-3"><header class="d-lg-flex gutter-lg mb-6"><div class="col-12 mb-3 mb-lg-0"><h1 id="title-h1">All Projects<!-- --></h1></div></header></div><div><div class="container-xl px-3 px-md-6 mt-6"><div class="d-lg-flex gutter my-6 py-6"><div class="col-12 mb-4 mb-lg-0 col-lg-4"><div class="mb-4 d-flex flex-items-baseline"><h2 id="allProjectsTitle" class="f4 text-semibold">All Projects (1)</h2></div><ul id="allProjects" class="article-column"></ul></div></div></div></div></div>';
+	document.getElementById('main-content').innerHTML = t_html;
+
+	let endpoint = site + "posts/posts.json";
+	fetch(endpoint).then((res) => res.text()).then((data) => {
+		let dat = JSON.parse(data);
+		let posts = dat["posts"]["all"];
+		for (i in posts) {
+			let post = posts[i];
+			let isBlog = post["blog"];
+
+			if (!isBlog) {
+				addpostFromObject(post, false);
+			}
+		}
+		updateNums();
 	})
 }
 
