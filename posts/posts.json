@@ -2,18 +2,19 @@
   "posts": {
     "all": [
       {
-        "name": "Adam Jowers and Isaac Stedman",
-        "id": "adam-jowers-and-isaac-stedman",
+        "name": "Mineflayer Notebot",
+        "id": "mineflayer-notebot",
+        "overrideUrl": "https://github.com/meeplabsdev/MineflayerNotebot",
         "active": false,
-        "blog": true,
+        "blog": false,
         "date": "01-08-2023"
       }
     ],
     "_": "The following elements are generated automatically when createPost.py is run.",
     "stats": {
       "current": 0,
-      "complete": 0,
-      "total": 0
+      "complete": 1,
+      "total": 1
     }
   }
 }
