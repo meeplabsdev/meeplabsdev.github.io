@@ -15,21 +15,13 @@
         "active": false,
         "blog": true,
         "date": "03-06-2009"
-      },
-      {
-        "name": "Bing 2",
-        "id": "bing2",
-        "overrideUrl": "https://bing.com/",
-        "active": true,
-        "blog": false,
-        "date": "03-06-2009"
       }
     ],
-    "_": "The following elements are generated automatically using generatePostData.py.",
+    "_": "The following elements are generated automatically when createPost.py is run.",
     "stats": {
-      "current": 1,
-      "complete": 2,
-      "total": 3
+      "current": 0,
+      "complete": 1,
+      "total": 1
     }
   }
 }
