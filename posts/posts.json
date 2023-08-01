@@ -1,27 +1,11 @@
 {
   "posts": {
-    "all": [
-      {
-        "name": "Bing",
-        "id": "bing",
-        "overrideUrl": "https://bing.com/",
-        "active": false,
-        "blog": false,
-        "date": "03-06-2009"
-      },
-      {
-        "name": "A Blog On Bing",
-        "id": "bing-blog",
-        "active": false,
-        "blog": true,
-        "date": "03-06-2009"
-      }
-    ],
+    "all": [],
     "_": "The following elements are generated automatically when createPost.py is run.",
     "stats": {
       "current": 0,
-      "complete": 1,
-      "total": 1
+      "complete": 0,
+      "total": 0
     }
   }
 }
