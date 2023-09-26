@@ -142,7 +142,7 @@ function updateCards() {
 }
 
 function loadAllProjects() {
-	let t_html = '<div><div class="container-xl px-3 px-md-6 mt-6 pt-3"><header class="d-lg-flex gutter-lg mb-6"><div class="col-12 mb-3 mb-lg-0"><h1 id="title-h1">All Projects<!-- --></h1></div></header></div><div><div class="container-xl px-3 px-md-6 mt-6"><div class="d-lg-flex gutter my-6 py-6"><div class="col-12 mb-4 mb-lg-0 col-lg-4"><div class="mb-4 d-flex flex-items-baseline"><h2 id="allProjectsTitle" class="f4 text-semibold">All Projects (1)</h2></div><ul id="allProjects" class="article-column"></ul></div></div></div></div></div>';
+	let t_html = '<div><div class="container-xl px-3 px-md-6 mt-6 pt-3"><header class="d-lg-flex gutter-lg mb-6"><div class="col-12 mb-3 mb-lg-0"><h1 id="title-h1">All Projects<!-- --></h1></div></header></div><div><div class="container-xl px-3 px-md-6 mt-6"><div class="d-lg-flex gutter my-6 py-6"><div class="col-12 mb-4 mb-lg-0 col-lg-4"><div class="mb-4 d-flex flex-items-baseline"><h2 id="allProjectsTitle" class="f4 text-semibold">All Projects</h2></div><ul id="allProjects" class="article-column"></ul></div></div></div></div></div>';
 	document.getElementById('main-content').innerHTML = t_html;
 
 	let endpoint = site + "posts/posts.json";
