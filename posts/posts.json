@@ -16,13 +16,6 @@
         "active": true,
         "blog": false,
         "date": "15-08-2023"
-      },
-      {
-        "name": "How I Created MineflayerNotebot",
-        "id": "how-i-created-mineflayernotebot",
-        "active": false,
-        "blog": true,
-        "date": "24-08-2023"
       }
     ],
     "_": "The following elements are generated automatically when createPost.py is run.",

@@ -15,6 +15,56 @@
 		<link rel="stylesheet" href="css/styles.css">
 		<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 		<script src="js/script.js"></script>
+		
+		<script>
+			window.addEventListener('scroll', function() {
+				function interpolateColor(color1, color2, factor) {
+				    if (arguments.length < 3) { 
+				        factor = 0.5; 
+				    }
+				    var r1 = color1[0];
+				    var g1 = color1[1];
+				    var b1 = color1[2];
+				    var r2 = color2[0];
+				    var g2 = color2[1];
+				    var b2 = color2[2];
+
+				    var r = Math.floor((r2 - r1) * factor + r1);
+				    var g = Math.floor((g2 - g1) * factor + g1);
+				    var b = Math.floor((b2 - b1) * factor + b1);
+				    return [r, g, b];
+				}
+
+				var scrollbarPosition = window.pageYOffset / (document.documentElement.scrollHeight - window.innerHeight);
+				var color1 = [87, 98, 213]; // #5762D5
+				var color2 = [213, 87, 89]; // #D55759
+
+				var color = interpolateColor(color1, color2, scrollbarPosition);
+				var red   = color[0];
+				var green = color[1];
+				var blue  = color[2];
+
+				document.documentElement.style.setProperty('--scrollbar-color', 'rgb(' + red + ',' + green + ',' + blue + ')');
+			});
+		</script>
+
+		<style>
+			/* Webkit Scrollbar */
+			::-webkit-scrollbar {
+				width: 10px;
+			}
+
+			/* Handle */
+			::-webkit-scrollbar-thumb {
+				background: var(--scrollbar-color, #4d56b3);
+				border-radius: 5px;
+			}
+
+			/* Handle on hover */
+			::-webkit-scrollbar-thumb:hover {
+				background: var(--scrollbar-color, #555555);
+			}
+		</style>
 	</head>
 	<body>
 		<div>
