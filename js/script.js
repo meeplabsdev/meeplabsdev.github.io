@@ -154,6 +154,7 @@ function loadAllProjects() {
 			let isBlog = post["blog"];
 
 			if (!isBlog) {
+				post["active"] = false;
 				addpostFromObject(post, false);
 			}
 		}
