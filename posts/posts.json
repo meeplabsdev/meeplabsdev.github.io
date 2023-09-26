@@ -16,6 +16,13 @@
         "active": true,
         "blog": false,
         "date": "15-08-2023"
+      },
+      {
+        "name": "Test Blog Post",
+        "id": "test-blog-post",
+        "active": false,
+        "blog": true,
+        "date": "26-09-2023"
       }
     ],
     "_": "The following elements are generated automatically when createPost.py is run.",
